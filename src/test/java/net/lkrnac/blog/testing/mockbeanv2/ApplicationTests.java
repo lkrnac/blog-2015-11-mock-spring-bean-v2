@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import net.lkrnac.blog.testing.mockbeanv2.Application;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(Application.class)
 public class ApplicationTests {
 	@Test
 	public void contextLoads() {

@@ -3,20 +3,17 @@ package net.lkrnac.blog.testing.mockbeanv2;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
-import net.lkrnac.blog.testing.mockbeanv2.AddressService;
-import net.lkrnac.blog.testing.mockbeanv2.Application;
-import net.lkrnac.blog.testing.mockbeanv2.UserService;
-import net.lkrnac.blog.testing.mockbeanv2.fake.AddressServiceSpy;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+@ActiveProfiles(TestProfiles.USER_SERVICE_TEST)
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = { Application.class, AddressServiceSpy.class })
+@SpringApplicationConfiguration(Application.class)
 public class UserServiceITest {
 	@Autowired
 	private UserService userService;

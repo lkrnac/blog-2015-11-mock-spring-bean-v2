@@ -3,21 +3,18 @@ package net.lkrnac.blog.testing.mockbeanv2;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.when;
 
-import net.lkrnac.blog.testing.mockbeanv2.AddressDao;
-import net.lkrnac.blog.testing.mockbeanv2.AddressService;
-import net.lkrnac.blog.testing.mockbeanv2.Application;
-import net.lkrnac.blog.testing.mockbeanv2.fake.AddressDaoMock;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+@ActiveProfiles(TestProfiles.ADDRESS_SERVICE_TEST)
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = { Application.class, AddressDaoMock.class })
+@SpringApplicationConfiguration(Application.class)
 public class AddressServiceITest {
 	@Autowired
 	private AddressService addressService;
