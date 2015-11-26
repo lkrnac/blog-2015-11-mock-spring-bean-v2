@@ -12,10 +12,10 @@ import net.lkrnac.blog.testing.mockbeanv2.TestProfiles;
 
 @Profile(TestProfiles.USER_SERVICE_TEST)
 @Configuration
-public class AddressServiceSpy {
+public class AddressServiceTestConfiguration {
 	@Bean
 	@Primary
-	public AddressService registerAddressServiceSpy(AddressService addressService) {
+	public AddressService addressServiceSpy(AddressService addressService) {
 		return spy(addressService);
 	}
 }
