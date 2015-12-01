@@ -1,4 +1,4 @@
-package net.lkrnac.blog.testing.mockbeanv2;
+package net.lkrnac.blog.testing.mockbeanv2.beans;
 
 public class TestProfiles {
 	private TestProfiles(){}

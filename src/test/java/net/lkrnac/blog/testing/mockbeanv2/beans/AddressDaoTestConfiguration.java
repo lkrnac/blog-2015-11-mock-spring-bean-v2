@@ -1,4 +1,4 @@
-package net.lkrnac.blog.testing.mockbeanv2.fake;
+package net.lkrnac.blog.testing.mockbeanv2.beans;
 
 import static org.mockito.Mockito.mock;
 
@@ -7,15 +7,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
-import net.lkrnac.blog.testing.mockbeanv2.AddressDao;
-import net.lkrnac.blog.testing.mockbeanv2.TestProfiles;
+import net.lkrnac.blog.testing.mockbeanv2.beans.AddressDao;
 
 @Profile(TestProfiles.ADDRESS_SERVICE_TEST)
 @Configuration
 public class AddressDaoTestConfiguration {
 	@Bean
 	@Primary
-	public AddressDao addressDao() {
+	public AddressDao addressDaoMock() {
 		return mock(AddressDao.class);
 	}
 }

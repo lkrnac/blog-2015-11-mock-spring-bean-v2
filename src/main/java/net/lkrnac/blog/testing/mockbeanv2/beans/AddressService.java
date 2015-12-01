@@ -1,4 +1,4 @@
-package net.lkrnac.blog.testing.mockbeanv2;
+package net.lkrnac.blog.testing.mockbeanv2.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
