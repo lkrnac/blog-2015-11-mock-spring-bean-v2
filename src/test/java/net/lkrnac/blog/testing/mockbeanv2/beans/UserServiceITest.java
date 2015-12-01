@@ -12,10 +12,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import net.lkrnac.blog.testing.mockbeanv2.application.Application;
-import net.lkrnac.blog.testing.mockbeanv2.beans.AddressService;
-import net.lkrnac.blog.testing.mockbeanv2.beans.UserService;
 
-@ActiveProfiles(TestProfiles.USER_SERVICE_TEST)
+@ActiveProfiles("UserService-test")
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Application.class)
 public class UserServiceITest {

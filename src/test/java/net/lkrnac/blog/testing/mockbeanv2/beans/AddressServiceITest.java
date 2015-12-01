@@ -16,7 +16,7 @@ import net.lkrnac.blog.testing.mockbeanv2.application.Application;
 import net.lkrnac.blog.testing.mockbeanv2.beans.AddressDao;
 import net.lkrnac.blog.testing.mockbeanv2.beans.AddressService;
 
-@ActiveProfiles(TestProfiles.ADDRESS_SERVICE_TEST)
+@ActiveProfiles("AddressService-test")
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(Application.class)
 public class AddressServiceITest {

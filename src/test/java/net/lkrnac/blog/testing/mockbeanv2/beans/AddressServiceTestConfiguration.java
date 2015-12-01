@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 
 import net.lkrnac.blog.testing.mockbeanv2.beans.AddressService;
 
-@Profile(TestProfiles.USER_SERVICE_TEST)
+@Profile("UserService-test")
 @Configuration
 public class AddressServiceTestConfiguration {
 	@Bean

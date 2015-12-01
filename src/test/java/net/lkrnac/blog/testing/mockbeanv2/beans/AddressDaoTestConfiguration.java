@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 
 import net.lkrnac.blog.testing.mockbeanv2.beans.AddressDao;
 
-@Profile(TestProfiles.ADDRESS_SERVICE_TEST)
+@Profile("AddressService-test")
 @Configuration
 public class AddressDaoTestConfiguration {
 	@Bean
