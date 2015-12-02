@@ -11,10 +11,11 @@ import net.lkrnac.blog.testing.mockbeanv2.beans.AddressDao;
 
 @Profile("AddressService-test")
 @Configuration
+
 public class AddressDaoTestConfiguration {
 	@Bean
 	@Primary
-	public AddressDao addressDaoMock() {
+	public AddressDao addressDao() {
 		return mock(AddressDao.class);
 	}
 }
