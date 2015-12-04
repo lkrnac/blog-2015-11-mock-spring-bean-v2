@@ -1,8 +1,5 @@
 package net.lkrnac.blog.testing.mockbeanv2.aoptesting;
 
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -44,7 +41,7 @@ public class UserServiceWithAopITest {
   
 		// THEN 
 		Assert.assertEquals("User john, 3 Dark Corner", actualUserDetails);
-		verify(addressServiceSpy.getSpyDelegate(), times(1)).getAddressForUser("john");
+		Mockito.verify(addressServiceSpy.getSpyDelegate()).getAddressForUser("john");
 	}
 }
  

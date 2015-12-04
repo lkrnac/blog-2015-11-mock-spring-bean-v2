@@ -1,7 +1,5 @@
 package net.lkrnac.blog.testing.mockbeanv2.aoptesting;
 
-import static org.mockito.Mockito.when;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,7 +35,8 @@ public class AddressServiceWithAopITest {
 	@Test
 	public void testGetAddressForUser() {
 		// GIVEN
-		when(addressDao.readAddress("john")).thenReturn("5 Bright Corner");
+		Mockito.when(addressDao.readAddress("john"))
+			.thenReturn("5 Bright Corner");
  
 		// WHEN 
 		String actualAddress = addressService.getAddressForUser("john");
