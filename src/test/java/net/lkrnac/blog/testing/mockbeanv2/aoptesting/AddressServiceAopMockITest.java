@@ -1,7 +1,6 @@
 package net.lkrnac.blog.testing.mockbeanv2.aoptesting;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -24,18 +23,11 @@ public class AddressServiceAopMockITest {
 	@Autowired
 	private AddressDao addressDao;
 	
-	private AddressDaoMock addressDaoMock;
- 
-	@Before
-	public void resetMock() {
-		addressDaoMock = (AddressDaoMock) addressDao; 
-		Mockito.reset(addressDaoMock.getMockDelegate()); 
-	}
-	 
 	@Test
 	public void testGetAddressForUser() {
 		// GIVEN
-		Mockito.when(addressDao.readAddress("john"))
+		AddressDaoMock addressDaoMock = (AddressDaoMock) addressDao;
+		Mockito.when(addressDaoMock.getMockDelegate().readAddress("john"))
 			.thenReturn("5 Bright Corner");
  
 		// WHEN 

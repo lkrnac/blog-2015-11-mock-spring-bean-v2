@@ -1,7 +1,6 @@
 package net.lkrnac.blog.testing.mockbeanv2.aoptesting;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -24,17 +23,10 @@ public class UserServiceAopITest {
 	@Autowired
 	private AddressService addressService;
 	
-	private AddressServiceSpy addressServiceSpy;
-	 
-	@Before  
-	public void resetSpy(){   
-		addressServiceSpy = (AddressServiceSpy) addressService;
-		Mockito.reset(addressServiceSpy.getSpyDelegate());
-	}
-     
 	@Test
 	public void testGetUserDetails() {
-		// GIVEN - spring context defined by Application class
+		// GIVEN
+		AddressServiceSpy addressServiceSpy = (AddressServiceSpy) addressService;
 
 		// WHEN
 		String actualUserDetails = userService.getUserDetails("john");
