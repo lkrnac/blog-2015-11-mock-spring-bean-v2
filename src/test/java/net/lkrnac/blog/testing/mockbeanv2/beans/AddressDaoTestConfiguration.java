@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 public class AddressDaoTestConfiguration {
 	@Bean
 	@Primary
-	public AddressDao addressDao() {
+	public AddressDao addressDaoMock() {
 		return Mockito.mock(AddressDao.class);
 	}
 }
