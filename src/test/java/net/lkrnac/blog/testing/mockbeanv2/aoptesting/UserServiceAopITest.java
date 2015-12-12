@@ -17,7 +17,7 @@ import net.lkrnac.blog.testing.mockbeanv2.beans.UserService;
 @ActiveProfiles({"UserService-aop-test", "aop"})
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(AopApplication.class)
-public class UserServiceWithAopITest {
+public class UserServiceAopITest {
 	@Autowired
 	private UserService userService;
 

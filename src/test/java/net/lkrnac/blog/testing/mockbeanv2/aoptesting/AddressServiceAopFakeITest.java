@@ -1,47 +1,31 @@
 package net.lkrnac.blog.testing.mockbeanv2.aoptesting;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import net.lkrnac.blog.testing.mockbeanv2.AopApplication;
-import net.lkrnac.blog.testing.mockbeanv2.beans.AddressDao;
 import net.lkrnac.blog.testing.mockbeanv2.beans.AddressService;
 
-@ActiveProfiles({"AddressService-aop-test", "aop"})
+@ActiveProfiles({"AddressService-aop-fake-test", "aop"})
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(AopApplication.class)
-public class AddressServiceWithAopITest {
+public class AddressServiceAopFakeITest {
 	@Autowired
 	private AddressService addressService; 
 
-	@Autowired
-	private AddressDao addressDao;
-	
-	private AddressDaoMock addressDaoMock;
- 
-	@Before
-	public void resetMock() {
-		addressDaoMock = (AddressDaoMock) addressDao; 
-		Mockito.reset(addressDaoMock.getMockDelegate()); 
-	}
-	 
 	@Test
 	public void testGetAddressForUser() {
-		// GIVEN
-		Mockito.when(addressDao.readAddress("john"))
-			.thenReturn("5 Bright Corner");
+		// GIVEN - Spring context
  
 		// WHEN 
 		String actualAddress = addressService.getAddressForUser("john");
  
 		// THEN  
-		Assert.assertEquals("5 Bright Corner", actualAddress);
+		Assert.assertEquals("john's address", actualAddress);
 	}
 }
