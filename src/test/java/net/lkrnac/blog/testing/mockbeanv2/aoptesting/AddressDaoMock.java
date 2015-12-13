@@ -13,7 +13,7 @@ import net.lkrnac.blog.testing.mockbeanv2.beans.AddressDao;
 @Profile("AddressService-aop-mock-test")
 public class AddressDaoMock extends AddressDao{
 	@Getter
-	private AddressDaoMock mockDelegate = Mockito.mock(AddressDaoMock.class);
+	private AddressDao mockDelegate = Mockito.mock(AddressDao.class);
 	
 	public String readAddress(String userName) {
 		return mockDelegate.readAddress(userName);
